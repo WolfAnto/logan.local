@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/simonStyle.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/simonJS.js"></script>
+</head>
+
+
+<body>
+
+	<div class="Header">
+		Tu préfère le Sudoku ? Clique ici pour y jouer : <span><a href="so.html">Sudoku</a></span>
+	</div>
+	<div style="margin:6% auto 0 auto" class="GameContainer" id="GameContainer">
+		<audio src=""></audio>
+		
+		<div class="ButtonRow">
+			<div class="CoreButton GreenButton" data-button-id="0" onclick="SimonSays.PlayerMakeMove(this)"></div><div class="CoreButton RedButton" data-button-id="1" onclick="SimonSays.PlayerMakeMove(this)"></div>
+		</div>
+		<div class="ButtonRow">
+			<div class="CoreButton YellowButton" data-button-id="2" onclick="SimonSays.PlayerMakeMove(this)"></div><div class="CoreButton BlueButton" data-button-id="3" onclick="SimonSays.PlayerMakeMove(this)"></div>
+		</div>
+		
+		<div class="CenterPlate">
+			<p class="PlateTitle">Simon <br> Game</p>
+			<div class="PlateScore">--</div>
+			<div class="PlateButton">
+				<button class="GreenButton" onclick="SimonSays.GameToggle()"></button>
+				<p>Start</p>
+			</div>
+			<div class="PlateButton">
+				<div class="PlateIndicatorLight PlateIndicatorLightOff"></div>
+				<button class="YellowButton" onclick="SimonSays.ToggleStrictMode()"></button>
+				<p>Strict</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+</body>
+
+
+</html>
