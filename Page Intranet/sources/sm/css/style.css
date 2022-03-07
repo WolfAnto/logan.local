@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cuprum:400,400i,700,700i|Oswald|VT323");
+
+
+body {
+	background-color:#2D2C2C;
+}
+
+.Header {
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	
+	padding-top:10px;
+	padding-left:2%;
+	border-bottom:3px solid white;
+	
+	color:white;
+	background-color:#2D2C2C;
+	font-size:2em;
+	font-family:"Alfa Slab One";
+	
+	z-index:2;
+}
+.Header .Credits {
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding-right:3%;
+	font-size:50%;
+	font-family:consolas;
+}
+.Credits span {
+	color:orange;
+}
+
+
+#Story {
+	width:85%;
+	margin:10% auto 0 auto;
+	padding:3%;
+	padding-top:1%;
+	
+	font-family:sans-serif;
+	font-weight:600;
+	
+	color:white;
+	border:3px solid white;
+	border-radius:60px;
+}
+
+
+
