@@ -1,0 +1,205 @@
+
+from time import sleep
+import pyautogui
+
+
+
+##Démarage + Enable
+
+sleep(5)
+pyautogui.typewrite("en")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("conf t")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+##Configuration Interface fe0/0 - fe 0/1
+
+pyautogui.typewrite("Interface FastEthernet 0/0")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("no sh")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("Interface FastEthernet 0/1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip address 172.16.43.1 255.255.248.0")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("no sh")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+
+##Configuration Interface Fe0/0.10
+
+pyautogui.typewrite("Interface FastEthernet 0/0.10")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("encapsulation dot1Q 10")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip address 192.168.10.6 255.255.255.248")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.2")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat inside")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+
+##Configuration Interface Fe0/0.20
+
+pyautogui.typewrite("Interface FastEthernet 0/0.20")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("encapsulation dot1Q 20")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip address 192.168.10.14 255.255.255.248")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.2")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat inside")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+##Configuration Interface Fe0/0.30
+
+pyautogui.typewrite("Interface FastEthernet 0/0.30")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("encapsulation dot1Q 30")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip address 192.168.10.22 255.255.255.248")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip helper-address 192.168.10.2")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat inside")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+##Routage
+
+pyautogui.typewrite("ip routing")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip route 172.16.40.0 255.255.248.0 172.16.43.1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip route 0.0.0.0 0.0.0.0 192.168.1.2")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+##Configuration NAT
+
+pyautogui.typewrite("Interface FastEthernet 0/0")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat inside")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(10)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+pyautogui.typewrite("Interface FastEthernet 0/1")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat outside")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(10)
+pyautogui.typewrite("exit")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
+##Activation NAT
+
+pyautogui.typewrite("access-list 1 permit 192.168.10.0 0.0.0.255")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+pyautogui.typewrite("ip nat inside source list 1 interface FastEthernet 0/1 overload")
+sleep(0.2)
+pyautogui.press('enter')
+sleep(0.2)
+
+
